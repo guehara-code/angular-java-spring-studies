@@ -7,5 +7,5 @@ for (let i = 0; i < reviews.length; i++) {
     total += reviews[i];
 }
 
-let average: number = total/reviews.length;
+let average: number = total / reviews.length;
 console.log("Review average = " + average);
