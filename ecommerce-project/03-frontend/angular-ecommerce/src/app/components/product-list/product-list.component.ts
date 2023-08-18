@@ -13,12 +13,13 @@ export class ProductListComponent implements OnInit {
 	products: Product[] = [];
 	currentCategoryId: number = 1;
 
-	private productService: ProductService;
-	private route: ActivatedRoute;
+	public productService: ProductService;
+	public route: ActivatedRoute;
 
 	constructor(productService: ProductService, route: ActivatedRoute) {
 		this.productService = productService;
 		this.route = route;
+		
 	}
 
 	ngOnInit() {
@@ -45,8 +46,10 @@ export class ProductListComponent implements OnInit {
 		this.productService.getProductList(this.currentCategoryId).subscribe(
 			data => {
 				this.products = data;
+				
 			}
 		)
+		
 	}
 
 }
