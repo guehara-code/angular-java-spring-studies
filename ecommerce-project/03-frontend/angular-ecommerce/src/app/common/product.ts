@@ -1,5 +1,6 @@
 export class Product {
 
+    public id: number;
     public sku: string;
     public name: string;
     public description: string;
@@ -10,15 +11,17 @@ export class Product {
     public dateCreated: Date;
     public lastUpdated: Date;
 
-    constructor(sku: string,
-                name: string,
-                descripton: string,
-                unitPrice: number,
-                imageUrl: string,
-                active: boolean,
-                unitsInStock: number,
-                dateCreated: Date,
-                lastUpdated: Date) {
+    constructor(id: number,
+        sku: string,
+        name: string,
+        descripton: string,
+        unitPrice: number,
+        imageUrl: string,
+        active: boolean,
+        unitsInStock: number,
+        dateCreated: Date,
+        lastUpdated: Date) {
+        this.id = id;
         this.sku = sku;
         this.name = name;
         this.description = descripton;
