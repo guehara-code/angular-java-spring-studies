@@ -114,7 +114,7 @@ export class CheckoutComponent implements OnInit {
 
 	get creditCardType() { return this.checkoutFormGroup.get('creditCard.cardType')!; }
 	get creditCardNameOnCard() { return this.checkoutFormGroup.get('creditCard.nameOnCard')!; }
-	get creditCardNumber() { return this.checkoutFormGroup.get('creditCard.Number')!; }
+	get creditCardNumber() { return this.checkoutFormGroup.get('creditCard.cardNumber')!; }
 	get creditCardSecurityCode() { return this.checkoutFormGroup.get('creditCard.securityCode')!; }
 
 	copyShippingAddressToBillingAddress(event: any) {
