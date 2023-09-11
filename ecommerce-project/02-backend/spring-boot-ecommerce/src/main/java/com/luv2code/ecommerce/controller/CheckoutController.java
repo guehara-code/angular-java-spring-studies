@@ -7,7 +7,6 @@ import com.luv2code.ecommerce.service.CheckoutServiceImpl;
 import org.hibernate.annotations.Check;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/api/checkout")
 public class CheckoutController {
