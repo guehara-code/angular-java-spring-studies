@@ -2,6 +2,8 @@
 
 my-app-config.ts
 application.properties
+localhost.crt
+localhost.key
 
 # Compiled output
 /dist
