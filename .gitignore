@@ -4,6 +4,7 @@ my-app-config.ts
 application.properties
 localhost.crt
 localhost.key
+luv2code-keystore.p12
 
 # Compiled output
 /dist
