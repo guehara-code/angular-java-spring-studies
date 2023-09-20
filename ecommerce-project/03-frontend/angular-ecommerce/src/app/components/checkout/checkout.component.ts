@@ -42,6 +42,7 @@ export class CheckoutComponent implements OnInit {
 	cardElement: any;
 	displayError: any = "";
 
+	isDisabled: boolean = false;
 
 	private formBuilder: FormBuilder;
 	private luv2ShopFormService: Luv2ShopFormService;
@@ -274,6 +275,9 @@ export class CheckoutComponent implements OnInit {
 		// - place order
 
 		if(!this.checkoutFormGroup.invalid && this.displayError.textContent === "") {
+			
+			this.isDisabled = true;
+
 			this.checkoutService.createPaymentIntent(this.paymentInfo).subscribe(
 				(paymentIntentResponse) => {
 					this.stripe.confirmCardPayment(paymentIntentResponse.client_secret,
@@ -297,6 +301,7 @@ export class CheckoutComponent implements OnInit {
 						if(result.error) {
 							// inform the customer there was an error
 							alert(`There was as error: ${result.error.message }`);
+							this.isDisabled = false;
 						} else {
 							// call REST API via the CheckoutService
 							this.checkoutService.placeOrder(purchase).subscribe({
@@ -305,9 +310,11 @@ export class CheckoutComponent implements OnInit {
 
 									// reset cart
 									this.resetCart();
+									this.isDisabled = false;
 								},
 								error: (err: any) => {
 									alert(`There was an error: ${err.message}`);
+									this.isDisabled = false;
 								}
 							})
 						}
